@@ -16,12 +16,6 @@ const webpackConfig = {
     module: {
         rules: [
             {
-                enforce: 'pre',
-                test: [/\.js$/, /\.vue$/],
-                exclude: [/node_modules/],
-                loader: 'eslint-loader'
-            },
-            {
                 test: /\.css$/,
                 use: [
                     'vue-style-loader',
@@ -37,17 +31,20 @@ const webpackConfig = {
                     {
                         loader: 'sass-loader',
                         options: {
-                            importer: globImporter()
+                            sassOptions: {
+                                importer: globImporter()
+                            }
                         }
                     },
                     {
                         loader: 'postcss-loader',
                         options: {
-                            ident: 'postcss',
-                            plugins: [
-                                require('stylelint')(),
-                                require('autoprefixer')()
-                            ]
+                            postcssOptions: {
+                                plugins: [
+                                    ['stylelint', {}],
+                                    ['autoprefixer', {}]
+                                ]
+                            }
                         }
                     }
                 ]
