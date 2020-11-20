@@ -1,6 +1,7 @@
 const path = require('path')
 const globImporter = require('node-sass-glob-importer')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 const webpackConfig = {
     entry: {
@@ -99,7 +100,8 @@ const webpackConfig = {
     },
     devtool: '#eval-source-map',
     plugins: [
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new ESLintPlugin()
     ]
 }
 

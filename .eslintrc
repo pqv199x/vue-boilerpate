@@ -24,6 +24,15 @@
             "closeBracket": 0,
             "alignAttributesVertically": true,
             "ignores": []
+        }],
+        "vue/html-closing-bracket-newline": ["error", {
+            "singleline": "never",
+            "multiline": "never"
+        }],
+        "vue/html-closing-bracket-spacing": ["error", {
+            "startTag": "never",
+            "endTag": "never",
+            "selfClosingTag": "never"
         }]
     }
 }
