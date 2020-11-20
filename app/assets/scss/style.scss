@@ -1,0 +1,16 @@
+/*
+SETTINGS
+store all variables, config switches, etc.
+Split up into logical sections, the smaller and simpler the better.
+used with preprocessors and contain font, colors definitions, etc
+================================================
+*/
+@import 'settings/*';
+
+/*
+ELEMENTS
+================================================
+styling for bare HTML elements (like H1, A, etc.).
+These come with default styling from the browser so we can redefine them here.
+*/
+@import 'elements/*';

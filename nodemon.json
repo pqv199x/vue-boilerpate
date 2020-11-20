@@ -1,0 +1,5 @@
+{
+    "ignore": [".git/*", ".gitignore", ".eslintcache", "app/*"],
+    "exec": "npm run lint && node"
+  }
+  
