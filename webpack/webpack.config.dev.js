@@ -1,7 +1,7 @@
 const path = require('path')
 const appName = '[name].js'
 const commonConfig = require('./webpack.config.common')
-const merge = require('webpack-merge')
+const { merge } = require('webpack-merge')
 
 const webpackConfig = merge(commonConfig, {
     mode: 'development',

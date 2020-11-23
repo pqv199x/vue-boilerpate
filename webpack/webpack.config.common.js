@@ -19,11 +19,22 @@ const webpackConfig = {
                 test: /\.css$/,
                 use: [
                     'vue-style-loader',
-                    'css-loader'
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    ['stylelint', {}],
+                                    ['autoprefixer', {}]
+                                ]
+                            }
+                        }
+                    }
                 ]
             },
             {
-                test: /\.scss$/,
+                test: /\.s[ac]ss$/i,
                 exclude: [/node_modules/],
                 use: [
                     'vue-style-loader',
@@ -58,7 +69,14 @@ const webpackConfig = {
                         scss: [
                             'vue-style-loader',
                             'css-loader',
-                            'sass-loader'
+                            {
+                                loader: 'sass-loader',
+                                options: {
+                                    sassOptions: {
+                                        importer: globImporter()
+                                    }
+                                }
+                            }
                         ]
                     }
                     // other vue-loader options go here
